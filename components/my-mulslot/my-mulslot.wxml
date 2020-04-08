@@ -1,0 +1,6 @@
+<!--components/my-mulslot/my-mulslot.wxml-->
+<view>我是多个插槽时的组件头部</view>
+  <slot name="slot1"/>
+  <slot name="slot2"/>
+  <slot name="slot3"/>
+<view>我是多个插槽时的组件尾部</view>

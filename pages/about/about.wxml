@@ -1,0 +1,45 @@
+<!-- 样式的三种写法:行内样式 > 页面样式 > 全局样式 -->
+
+<!-- rpx:自动适配  1px = 2rpx-->
+<view class="box1">嘻嘻</view>
+<view class="box2">吼吼</view>
+<view class="con1">哈哈哈</view>
+<view class="con2">嘻嘻嘻</view>
+
+<!-- {{}}Mustach语法 -->
+<!-- 可以进行三目运算符,简单计算 -->
+<view>当前时间:{{nowdate}}</view>
+
+<!-- 条件判断 -->
+<view>==========条件判断=========</view>
+<button size="mini" bindtap="handleShow">切换显示</button>
+<!-- 要注意哦,这里的wx:if后面接的不能是单独的字符串哦,需要写成Mustache语法格式,否则程序不报错但是页面却显示不出来. -->
+<!-- !!!不能像下面这样写: -->
+<!-- <view wx:if="isShow">被你发现啦!</view> -->
+<!-- 需要酱紫写: -->
+<view wx:if="{{isShow}}">被你发现啦!</view>
+
+<!-- hidden属性:隐藏组件 -->
+<view hidden="{{true}}">我是hidden组件控制的内容,为true时,即为确定隐藏内容</view>
+
+<!-- hidden与wx:if 隐藏组件时的区别 -->
+<!-- 1.hidden: 将组件隐藏起来时,该组件依然存在,仅仅是将该组件的display属性设置为了none(display:none)
+     2.wx:if: 将组件隐藏起来时,该组件不存在(根本没有创建),是控制组件是否渲染的.
+选择:
+  如果显示和隐藏切换的频率非常高,选择使用hidden;反之选择wx:if
+ -->
+<view hidden="{{true}}">我是hidden组件控制的内容</view>
+<view wx:if="{{false}}">我是wx:if组件控制的内容</view>
+
+<!-- block标签: block标签需要掌握,这个会在之后的开发中经常用到.-->
+<!-- 注意: block标签 并不是一个组件,它仅仅是一个包装元素,不会在页面中做任何渲染,只接受控制元素(比如wx:if或者wx:for).-->
+<!-- 使用block的好处
+  (1).将需要进行遍历或者判断的内容进行包裹;
+  (2).将遍历和判断的属性放在block标签中,不影响普通属性的阅读,提高代码的可读性.
+ -->
+<block wx:for="{{3}}">
+  <button>按钮</button>
+  <view>哈哈哈</view>
+  <view>吼吼吼</view>
+</block>
+

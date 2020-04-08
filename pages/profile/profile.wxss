@@ -1,0 +1,10 @@
+/* pages/profile/profile.wxss */
+.hover-view{
+  background-color: aquamarine;
+  color: blueviolet;
+}
+
+input{
+  border: 1px solid aqua;
+  margin: 10px 10px;
+}

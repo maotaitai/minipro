@@ -1,0 +1,64 @@
+<!--pages/profile/profile.wxml-->
+<!-- text文本 内置组件  是行内元素 -->
+<text>pages/profile/profile.wxml\n</text>
+<text>Hello Whisper\n</text>
+
+<!-- 1. 文本是否长按可选 -->
+<text selectable="{{true}}">胖虎啊   嗷嗷嗷\n</text>
+<!-- 2. 推荐下面这种写法，更加简洁。 -->
+<!-- <text selectable>胖虎啊   嗷嗷嗷</text> -->
+
+<!-- 2. 决定文本空格的大小 -->
+<!-- ensp：半个中文字符的空格  emsp：一个中文字符的空格-->
+<text>Hello 胖虎\n</text>
+<text space="nbsp">Hello 胖虎\n</text>
+<text space="ensp">Hello 胖虎\n</text>
+<text space="emsp">Hello 胖虎\n</text>
+
+<!-- button 的基本使用 默认块级元素.-->
+<button>哈哈</button>
+
+<!-- 2.button的一些属性 -->
+<button size="mini">嗷嗷</button>
+<button size="mini" type="primary">啦啦</button>
+<button size="mini" type="default">啦啦</button>
+<button size="mini" type="warn">啦啦</button>
+<!-- plain镂空效果 -->
+<button size="mini" plain>啦啦</button>
+<!-- 不可用 -->
+<button size="mini" disabled>啦啦</button>
+<!-- 加载 -->
+<button size="mini" loading>啦啦</button>
+
+<!-- view 视图组件 块级元素,独占一行,通常用作容器组件. -->
+<view hover-class="hover-view">这里是组件演示</view>
+
+<!-- image组件
+  1. image组件可以写成单标签,也可以写成双标签;
+  2. image组件默认有自己的大小:320x240
+  3. image组件是一个行内块级元素(inline-block)
+ -->
+ <!--src:  本地路径/远程图片-->
+<image src="http://img1.imgtn.bdimg.com/it/u=3201137174,781909457&fm=26&gp=0.jpg"></image>
+<image src="/assets/tabbar/18.jpg"></image>
+<button bindtap="handleChooseImage">选择图片,如下图进行展示</button>
+<image src="{{imagePath}}"></image>
+
+<!-- lazy-load:图片懒加载 -->
+<image src="http://img1.imgtn.bdimg.com/it/u=3201137174,781909457&fm=26&gp=0.jpg" 
+        lazy-load>
+</image>
+<view>===========================================</view>
+<!--长按图片 显示小程序码 -->
+<image src="http://img1.imgtn.bdimg.com/it/u=3201137174,781909457&fm=26&gp=0.jpg" show-menu-by-longpress></image>
+
+<!-- input组件 -->
+<input value="hhhh"></input>
+<input placeholder="请输入暗号"></input>
+<!-- password:暗文 -->
+<input password></input>
+<!-- type: 决定键盘类型(文本输入键盘text/数字number/身份证idcard/带小数点digit) -->
+<input type="number"></input>
+
+<!-- input绑定事件 -->
+<input bindinput="handleInput" bindfocus="handleFocus" bindblur="handleBlur"></input>

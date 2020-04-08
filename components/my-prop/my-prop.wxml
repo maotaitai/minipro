@@ -1,0 +1,7 @@
+<!--components/my-prop/my-prop.wxml-->
+<!-- 注意这里的 titleclass 如果写成titleClass的话,页面是不会有相应变化的. -->
+<view  class="title titleclass">{{title}}</view>
+<view class="content">我是组件的内容</view>
+
+
+

@@ -1,0 +1,12 @@
+<!--components/w-tab-control/w-tab-control.wxml-->
+<view class="tab-container">
+  <block wx:for="{{titles}}" wx:key="{{index}}">
+  <!-- 实现 点击哪个item item就显示红色. -->
+  <!-- data-index="{{index}}" :这个不知道是干嘛的??? -->
+    <view class='tab-item {{currentIndex == index?"active":""}}'
+          bind:tap="handleClick"
+          data-index="{{index}}">
+        <text>{{item}}</text>
+    </view>
+  </block>
+</view>

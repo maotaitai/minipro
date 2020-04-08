@@ -1,0 +1,16 @@
+.box1 {
+  width: 100px;
+  height: 100px;
+  background: aqua;
+}
+.box2 {
+  width: 200rpx;
+  height: 200rpx;
+  background: burlywood;
+}
+.con1 {
+  font-size: 32px;
+}
+.con2 {
+  font-size: 64rpx;
+}

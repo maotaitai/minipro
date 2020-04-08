@@ -1,0 +1,3 @@
+<!--components/my-event/my-event.wxml-->
+<!-- 有时候是自定义组件内部发生了事件,需要告知使用者,这个时候可以使用自定义事件. -->
+<button size="mini" bindtap="increment">点我加1</button>

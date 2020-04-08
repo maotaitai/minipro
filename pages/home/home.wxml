@@ -1,0 +1,64 @@
+<!-- 1.数据的绑定 -->
+<view>Hello {{name}}</view>
+<view>我的年龄：{{age}}</view>
+
+<!-- 2. 列表展示 wx:for -->
+<view wx:for="{{books}}">{{item.name}}-{{item.price}}</view>
+
+<!-- 3. 事件监听改变data -->
+<view>计数器：{{count}}</view>
+<button size="mini" bindtap="handleBtnClickAdd">+</button>
+<button size="mini" bindtap="handleBtnClickDec">-</button>
+ 
+ <!-- 如果想用自定义组件的话: 
+    1. 在home.json中声明使用哪个组件;
+    2. 在home.wxml中,使用组件即可.
+-->
+<!-- 使用自定义组件和注意事项:
+    1. 因为WXML节点标签只能是小写字母,中划线和下划线的组合,所以自定义组件的标签名也只能包含这些字符. 禁止像这样子:my^cpn或者myCpn.
+    2. 自定义组件也可以引用其他自定义组件.
+    3. 自定义组件和页面所在项目根目录名不能以 wx- 为前缀,否则会报错.
+    4. 如果在app.json的usingComponents声明某个组件,那么所有页面和组件可以直接使用该组件. 
+ -->
+<my-cpn></my-cpn>
+
+<!-- 页面和组件之间的通信 -->
+<!-- 1.页面向组件传递数据 和样式 -->
+<my-prop title="哈哈哈哈" titleclass="red"/>
+<my-prop title="嘻嘻嘻嘻" titleclass="blue"/>
+<my-prop titleclass="yellow"/>
+
+<!-- 2.组件向外传递数据： -->
+<view>当前计数:{{counter}}</view>
+<my-event bind:increment="handleIncrement"/>
+
+<!-- 练习: -->
+<w-tab-control titles='{{["衣服","帽子","鞋子"]}}' bind:itemClick="handleTabClick"/>
+
+<!-- 3. 获取组件对象的方式:修改数据或者调用方法 -->
+<button size="mini" bindtap="selectClick">点我试试</button>
+<my-select class="selectclass" id="selectid"/>
+
+<!-- 1. 单个插槽的使用 ,可以插入图片,文本,按钮,进度条等等-->
+<my-slot>
+    <button size="mini">我是插入的按钮</button>
+    <text>我是插入的文本</text>
+    <image src="/assets/tabbar/18.jpg"></image>
+    <slider value="66"></slider>
+</my-slot>
+
+<!-- 2. 多个插槽的使用: 
+   注意事项:
+   1. 给每一个插槽起一个名字,name属性
+   2. 必须在component对象中添加一个属性:options====> multipleSlots:true
+-->
+<my-mulslot>
+    <button slot="slot3">我是插入的按钮</button>
+    <slider value="66" slot="slot2"></slider>
+    <text slot="slot1">wohhhh</text>
+</my-mulslot>
+
+
+
+
+
